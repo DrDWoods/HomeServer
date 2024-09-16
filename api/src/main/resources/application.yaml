@@ -1,0 +1,6 @@
+ktor:
+  application:
+    modules:
+      - org.api.AppKt.module
+  deployment:
+    port: 8080

@@ -23,6 +23,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+    implementation(libs.ktor.core)
+    implementation(libs.ktor.netty)
+    implementation(libs.ktor.yaml)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +37,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.ApiKt"
+    mainClass = "org.api.AppKt"
 }
 
 tasks.named<Test>("test") {
