@@ -7,11 +7,12 @@ import io.ktor.server.response.respondText
 import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
 
+/**
+ * Setup http routing for status related calls
+ */
 fun Application.configureRouting(){
-
     routing {
-
-        route("/alive", HttpMethod.Get){
+        route("/isAlive", HttpMethod.Get){
             handle{
                 call.respondText("I'm alive")
             }

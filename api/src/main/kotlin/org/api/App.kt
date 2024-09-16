@@ -6,23 +6,31 @@ package org.api
 import io.ktor.server.application.Application
 import org.api.controller.configureRouting
 
+/**
+ * Entry class
+ */
 class App {
     fun greeting(){
         print("This is to satisfy a test")
     }
 
     fun start(args: Array<String>) {
-        // Load configuration from application.yaml
+
+        // Load configuration from main/src/application.yaml
         io.ktor.server.netty.EngineMain.main(args)
     }
 }
 
+/**
+ * Entry point
+ */
 fun main(args: Array<String>) {
-    //App().start(args)
-    io.ktor.server.netty.EngineMain.main(args)
+    App().start(args)
 }
 
-
+/**
+ * Setup http routing. This is called by netty.EngineMain due to application.yaml settings.
+ */
 fun Application.module() {
     configureRouting()
 }
