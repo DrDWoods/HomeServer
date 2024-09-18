@@ -5,7 +5,7 @@ FROM openjdk:21-jdk
 WORKDIR /app
 
 # Copy the build files from the local machine into the container
-COPY api/build/libs/kotlin-api.jar app.jar
+COPY app/build/libs/kotlin-api.jar app.jar
 #COPY api/src/main/resources/application.yaml /app/resources/application.yaml
 
 # Expose the application port (optional, depends on your application)

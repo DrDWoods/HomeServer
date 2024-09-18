@@ -9,4 +9,4 @@ plugins {
 }
 
 rootProject.name = "HomeServer"
-include("api")
+include("app")
