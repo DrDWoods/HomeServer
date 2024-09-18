@@ -1,10 +1,13 @@
 
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
+    // Support for Kotlin.
     alias(libs.plugins.jvm)
 
-    // Apply the application plugin to add support for building a CLI application in Java.
+    // Support for building a CLI application in Java.
     application
+
+    // Fat JAT
+    alias(libs.plugins.shadow)
 }
 
 repositories {
@@ -38,6 +41,12 @@ java {
 application {
     // Define the main class for the application.
     mainClass = "org.api.AppKt"
+}
+
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveBaseName.set("kotlin-api") // Set your desired output jar name
+    archiveClassifier.set("") // Remove the classifier so it becomes the default jar
+    mergeServiceFiles() // Handle service files
 }
 
 tasks.named<Test>("test") {

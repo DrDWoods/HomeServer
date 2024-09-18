@@ -15,3 +15,4 @@ ktor-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor"}
 
 [plugins]
 jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.9.22" }
+shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1"}
